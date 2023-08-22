@@ -22,6 +22,7 @@ export interface CredoConfiguration {
     enabled: boolean
     mergeBase: string
   }
+  lintOnSave: boolean
 }
 
 export function autodetectExecutePath(): string {
@@ -66,6 +67,7 @@ export function fetchConfig(): CredoConfiguration {
       enabled: conf.get('diffMode.enabled', false),
       mergeBase: conf.get('diffMode.mergeBase', 'main'),
     },
+    lintOnSave: conf.get('lintOnSave', true)
   }
 }
 

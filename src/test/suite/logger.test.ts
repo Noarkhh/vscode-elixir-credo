@@ -37,6 +37,7 @@ describe('Loggging', () => {
         enabled: false,
         mergeBase: 'main',
       },
+      lintOnSave: true
     }),
   )
 

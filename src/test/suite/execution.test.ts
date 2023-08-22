@@ -34,6 +34,7 @@ describe('Credo Execution Functions', () => {
         enabled: false,
         mergeBase: 'main',
       },
+      lintOnSave: true
     }),
   )
 

@@ -87,6 +87,7 @@ describe('Configuration', () => {
             enabled: false,
             mergeBase: 'main',
           },
+          lintOnSave: true
         })
       })
 
@@ -127,6 +128,7 @@ describe('Configuration', () => {
             enabled: false,
             mergeBase: 'main',
           },
+          lintOnSave: true
         }
         fetchConfigStub = sandbox.stub(configurationModule, 'fetchConfig').returns(initialConfig)
         reloadConfig()

@@ -39,6 +39,18 @@
         ]
       }
     ],
+    "commands": [
+      {
+        "category": "Credo",
+        "command": "credo.mixCredo",
+        "title": "Run mix credo"
+      },
+      {
+        "category": "Credo",
+        "command": "credo.mixCredoCurrent",
+        "title": "Run mix credo for current file"
+      }
+    ],
     "configuration": [
       {
         "title": "Credo (Elixir Linter)",
@@ -125,6 +137,12 @@
             "if": "config.elixir.credo.diffMode.enabled",
             "default": "main",
             "scope": "resource"
+          },
+          "elixir.credo.lintOnSave": {
+            "title": "Lint On Save",
+            "description": "Run credo on each file save",
+            "type": "boolean",
+            "default": true
           }
         }
       }

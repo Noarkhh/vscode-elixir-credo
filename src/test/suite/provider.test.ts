@@ -205,6 +205,7 @@ describe('CredoProvider', () => {
               enabled: false,
               mergeBase: 'main',
             },
+            lintOnSave: true
           }),
         )
 
@@ -421,6 +422,7 @@ describe('CredoProvider', () => {
               enabled: false,
               mergeBase: 'main',
             },
+            lintOnSave: true
           }),
         )
 

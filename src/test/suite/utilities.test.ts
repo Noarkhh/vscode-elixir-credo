@@ -229,6 +229,7 @@ describe('Utilities', () => {
           enabled: false,
           mergeBase: 'main',
         },
+        lintOnSave: true
       }),
     )
 
@@ -397,6 +398,7 @@ describe('Utilities', () => {
             enabled: false,
             mergeBase: 'main',
           },
+          lintOnSave: true
         }),
       )
 
@@ -422,6 +424,7 @@ describe('Utilities', () => {
             enabled: true,
             mergeBase: 'main',
           },
+          lintOnSave: true
         }),
       )
 
@@ -460,6 +463,7 @@ describe('Utilities', () => {
             enabled: false,
             mergeBase: 'main',
           },
+          lintOnSave: true
         }),
       )
 

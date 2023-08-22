@@ -2,7 +2,7 @@
 
 import * as vscode from 'vscode'
 import { CredoProvider } from './provider'
-import { reloadConfiguration } from './configuration'
+import { getCurrentConfiguration, reloadConfiguration } from './configuration'
 import { LogLevel, log } from './logger'
 
 export function activate(context: vscode.ExtensionContext) {
@@ -26,11 +26,23 @@ export function activate(context: vscode.ExtensionContext) {
   })
 
   workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
-    credo.execute({ document })
+    if(getCurrentConfiguration().lintOnSave) {
+      credo.execute({ document })
+    }
   })
 
   workspace.onDidCloseTextDocument((document: vscode.TextDocument) => {
     credo.clear({ document })
+  })
+
+  vscode.commands.registerCommand("credo.mixCredo", async () => {
+    workspace.textDocuments.forEach((document: vscode.TextDocument) => {
+      credo.execute({ document })
+    })
+  })
+
+  vscode.commands.registerCommand("credo.mixCredoCurrent", async () => {
+    vscode.window.activeTextEditor?.document && credo.execute({ document: vscode.window.activeTextEditor.document })
   })
 
   log({ message: 'Credo (Elixir Linter) initiated successfully.', level: LogLevel.Info })
